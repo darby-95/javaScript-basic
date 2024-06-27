@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click</button>
+    <div id="memberList">
+        <p id="p1">홍길동</p>
+        <p id="p2">놀부</p>
+        <p id="p3">흥부</p>
+    </div>
+
+    <script>
+        // DOM 삭제
+
+        // [1] 첫번째 방법
+        // : btn 클릭시 '어떤 일(function)'이 생긴다.
+        // 어떤일(function) : memberList 의 자식인 p1이 없어진다.
+        document.querySelector('#btn').addEventListener('click',function(){
+            let memberList = document.querySelector('#memberList')
+            // memberList 는 html 의 #memberList 이다.
+            let p1=document.querySelector('#p1')
+            // p1 는 html 의 #p1 이다.
+
+            memberList.removeChild(p1)
+            // memberList의 자식인 p1을 지워라.
+
+        })
+
+        // [2] 두번째 방법
+        // : btn 클릭시 '어떤 일(function)'이 생긴다.
+        // 어떤일(function) : memberList 의 자식인 p2이 없어진다.
+        document.querySelector('#btn').addEventListener('click',function(){
+            let p2=document.querySelector('#p2')
+            p2.parentNode.removeChild(p2)
+            // p2의 부모(parentNode)를 불러내어 자식인 p2를 지워라.
+        })
+
+    </script>
+</body>
+</html>

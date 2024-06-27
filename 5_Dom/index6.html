@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="memberList">
+        <li id="one" class="item">홍길동</li>
+        <li id="two" class="item">이순신</li>
+        <li id="three" class="item">강감찬</li>
+        <li id="four" class="item">을지문덕</li>
+    </ul>
+    <button id="btn">사용자 삭제하기</button>
+    <script>
+
+        // API란? Application Programming Interface(애플리케이션 프로그램 인터페이스)의 줄임말입니다. API의 맥락에서 애플리케이션이라는 단어는 고유한 기능을 가진 모든 소프트웨어이다.
+        // 라이브러리란? 사람들이 자주 쓰는 코드를 묶은 것
+        // 프레임 워크란? 프레임(틀, 규칙or 법칙)+'work'. 
+
+        // 브라우저 API
+        // console.log(document.querySelector('.item')) : item 클래스를 가진 첫번째 자식만 불러진다. 
+        // console.log(document.querySelector('#memberList')) : memberList 의 자식을 포함한 html 태그 모두를 부른다.
+        // console.log(document.querySelectorAll('.item')) : .item 이 배열로 불러진다.
+
+        // 자바스크립트 API
+        // console.log(document.getElementsByClassName('item')) : .item 을 배열로 부른다.
+        // console.log(document.getElementById('memberList')) //: id인 memberList 의 자식을 포함한 html 태그 모두를 부른다.
+
+        function removeElemByText(text){
+            let li = document.querySelectorAll('#memberList li')
+            console.log(li)
+
+            // li는 유사배열 --> 배열
+            let li2=[...document.querySelectorAll("#memberList")]
+            console.log(li2)
+            li.forEach((item)=>{
+                // console.log(item.innerHTML)
+                if(item.innerHTML === text){
+                    item.parentNode.removeChild(item)
+                }
+            })
+        }
+
+        document.querySelector('#btn').addEventListener('click',function(){
+            removeElemByText("을지문덕")
+        })
+        
+    </script>
+</body>
+</html>

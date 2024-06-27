@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 객체내에 객체
+        let person={
+            name:"홍길동",
+            age:23,
+            성적:{
+                영어:90,
+                수학:50,
+                철학:100
+            }
+        }
+        console.log(person.age) // 23
+        console.log(person.성적) // 성적의 배열이 나온다.
+        console.log(person.성적.영어) // 90
+
+        // 나의 이름은 홍길동이고 나의 철학점수는 100점이다.
+        console.log(`나의 이름은 ${person.name}이고 나의 철학점수는 ${person.성적.철학}점이다.`)
+
+    
+        // 객체내에 포함된 함수는 Method 라고 부른다.
+        // 메서드란 객체의 어떤 동작이나 처리를 구현 담당한다.
+        // 속성 : 객체의 주요 특성(특징)을 정의한다. (name, age)
+        // 영억.offsetTop
+        // document.querySelector(".클래스명").offsetTop
+        // document.querySelector(".클래스명").addEventListener("click",함수) : 여기서 메서드는'addEventListener' 이다.
+
+    let personMan={
+        name:"홍길동",
+        age:20,
+        showMessage:function(){
+            console.log(`나의 이름은 ${this.name}이고, 나이는 ${this.age}이다.`)
+            // 여기서 사용되는 this는 객체 자체를 말한다.
+        }
+    }
+    console.log(personMan.name)
+    personMan.showMessage() // : 객체 안의 showMessage안의 함수를 호출하려면 showMessage 뒤에 () 함수를 부른다는 메서드를 남겨야한다.
+    </script>
+</body>
+</html>

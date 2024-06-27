@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // [1] 프로토타입이란? 
+        // 자바스크립트는 프로토타입 기반의 언어이다.
+        // Prototype : 원형(자기자신이 만들어지게된 원형)
+
+        let 과일={name:"사과"}
+
+
+        // 속성 추가
+        과일.expiration='안녕'; // : expiration(key), '안녕'(value)이라는 속성이 추가된다.
+        과일.taste='달다'; // key=taste, value='달다'. 
+        console.log(과일)
+
+        // 속성 유무 체크
+        console.log(과일.hasOwnProperty('expiration')) // : 속성을 가지고 있어서 true
+        console.log(과일.hasOwnProperty('안녕')) // : key 값만 찾을 수 있고 value 값은 찾을 수 없어서 false
+        
+        let aaa={};
+        console.log(aaa) // : 속성이 비어도 기본적인 prototype은 가지고 있다.
+        
+        
+
+
+    </script>
+</body>
+</html>

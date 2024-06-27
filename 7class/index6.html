@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 상속
+
+        class IdolModel {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+
+            }
+        }
+
+        // 과거 react에서 사용했던 상속된 함수 extends
+        // : 클래스 FemaleIdolModel는 IdolModel 클래스로부터 상속 받았다.
+        // 상속 받은것 : 13-15줄의 내용을 FemaleIdolModel 클래스 안에서도 사용할 수 있다.
+        class FemaleIdolModel extends IdolModel {
+            dance() {
+                return "춤을 추다"
+            }
+        }
+
+        class MaleIdolModel extends IdolModel {
+            sing() {
+                return "노래를 부르다"
+            }
+        }
+
+        const YuJin = new FemaleIdolModel("안유진", 2003)
+        console.log(YuJin)
+        const Jimin = new MaleIdolModel("지민", 2006)
+        console.log(Jimin)
+
+        // Super override
+        class Person {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            sayName() {
+                return `안녕하세요! ${this.year}에 태어난 ${this.name}입니다.`
+            }
+        }
+
+        class FemalePerson extends Person{
+            // 부모의 constructor의 내용에서 추가적으로 적고 싶다면?
+            constructor(name,year,part){
+                // 부모가 가진것들을 그대로 받겠다, 적지 않으면 새로 덮어써서 적용되기 때문에 이전에 부모가 가졌던 constructor는 사용되지 않는다.
+                super(name, year);
+                this.part = part;
+            }
+            sayName(){
+                // 56줄에 적은 내용과 같이 덮어쓰기가 되지 않고 추가적으로 내용을 만들기위해 명령어 ${super.sayName()}를 넣어준다.
+                return `${super.sayName()}만나서 반갑습니다! ${this.part}를 담당합니다.`
+            }
+        }
+
+        const 신사임당=new FemalePerson("신사임당", 2004, "그림")
+        console.log(신사임당.sayName()) // : 안녕하세요! 2004에 태어난 신사임당입니다.만나서 반갑습니다! 그림를 담당합니다.
+        // sayName안의 return값 내용을 불러오기위해 ()를 사용해야한다.
+
+        const 심청이 =new Person("심청이",2006,)
+        console.log(심청이.sayName()) // : 안녕하세요! 2006에 태어난 심청이입니다.
+
+    </script>
+</body>
+
+</html>

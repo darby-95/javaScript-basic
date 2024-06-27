@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scope</title>
+</head>
+<body>
+    <script>
+        // var : 함수 스코프, 함수 안에서만 사용된다. ❗❗ 함수 바깥에서는 사용되지 못한다, 함수 안에서만 사용 가능하다.
+        // let, const : 블럭({}) 스코프, ❗❗ {} 안에서는 밖의 변수를 사용할 수 있지만 블록 안에서 만들어진 (선언된) 변수는 블럭 밖에서는 사용할 수 없다. --Err
+        // ❗❗❗ 모든 변수들은 함수 안에서 선언되면 바깥에서 호출을 못한다.
+        var z=3;
+        let i=15
+        function b(){
+            var a = 1
+            let k = 10
+        }
+        b()
+        // console.log(a) // : 함수 안에 var가 할당되어 바깥에서는 호출하지 못한다.
+        console.log(z) // : z(var)는 함수 바깥에 할당되어 호출이 가능하다.
+        //console.log(k)
+        console.log(i) // : i(let) 함수 바깥에 할당되어 호출이 가능하다.
+        
+        // ❗❗❗ 모든 변수들은 함수 바깥에서 선언되면 안으로 들고 들어와서 호출이 가능하다.
+
+        if(true){
+            var t=33
+            let v=44
+        }
+        console.log(t) // : var는 함수를 제외한 if,for,forEach 모두 안에 있어도 바깥에서 호출이 가능하다. 
+        console.log(v) // : let은 if를 포함한 모든 블럭 안에서만 호출이 가능하다.
+
+    </script>
+</body>
+</html>

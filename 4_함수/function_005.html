@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 화살표 함수(Arrrow Function) 사용법
+        // 함수 표현식보다 더 간결하고 (짧게 줄여짐) 편리하게 함수를 만들 수 있다.
+
+        // [1] 함수 표현식
+
+        let arrFunc = function (a, b) {
+            return a + b
+        }
+        console.log(arrFunc(10, 20)) //30
+
+
+
+        // [2] 화살표 함수
+
+        let arrFunc2 = (a, b) => {
+            return a + b
+        }
+
+
+
+        // 실행문이 한 줄일때 {}를 생략할 수 있다.
+        // 화살표 함수일때는 실행문이 한줄이고 return문이라면 {}와 return을 함께 생략해야한다.
+
+        let arrFunc3 = (a, b) => a + b // 한줄로 줄일 수 있다.
+        console.log(arrFunc(10, 20)) //30
+
+        // [3] 인자값이 하나일때 ==> ()를 줄일 수 있다. 단, 인자값이 2개 이상이거나 없거나 할때는 줄일 수 없다.
+
+        // [3-1]
+        let arrFunc4 = function (name) {
+            console.log(`반갑습니다 ${name} 회원님~`)
+        }
+        arrFunc4("홍길동")
+
+        let arrFunc5 = (name) => {
+            console.log(`반갑습니다 ${name} 회원님~`)
+        }
+        arrFunc5("홍길동")
+
+        let arrFunc6 = (name) => console.log(`반갑습니다 ${name} 회원님~`)
+        arrFunc6("홍길동")
+
+        // [3-2]
+        let arrFunc7 = function (num) {
+            return num * 2
+        }
+        let result7 = arrFunc7(10)
+        console.log(result7)
+
+        // let arrFunc8=(num)=>num*2
+
+        // [3-3]
+        let arrFunc8 = num => num * 2
+
+        let result8 = arrFunc8(10)
+        console.log(result8)
+
+        // [3-4,1]
+        let arrFunc9 = function (a, b) {
+            return a + b
+        }
+        let result9 = arrFunc9(2, 4)
+        console.log(result9)
+
+        // [3-4,2]
+        let arrFunc10 = (a, b) => a + b
+
+        let result10 = arrFunc10(2, 4)
+        console.log(result10)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><h1 id="head"><p><a href="#">텍스트</a></p></h1><ul><li><a href="#">li1</a></li><li><a href="#">li2</a></li><li><a href="#">li3</a></li><li><a href="#">li4</a></li></ul>
+    <script>
+        // Dom : Document Object Model 의 약자 --> 웹의 문서와 웹의 태그와 관련된 객체를 의미한다.
+
+        let head1=document.getElementById("head") // : document 에서 head라는 id 클래스를 가진 객체를 불러와라.
+        // let head1=document.querySelector("head") : 해당 명령어는 id가 아닌 class를 불러낼 수 있다.
+
+        console.log(head1)
+
+        // window.onload=function(){} // 이벤트를 딱 하나만 걸 수 있다. (옛날 문법)
+        // window.addEventListener("load",function(){}) // 이벤트를 여러개 걸 수 있다. (그나마 최신 방식, 위와 명령어는 같다.)
+
+        // head1.onclick=function(){}
+        // head1.addEventListener("click",function(){})
+
+        window.onload=function(){ // 이미지나 다른 모든것들을 읽어냈다면 함수를 실행해라.
+            let eleNode=document.createElement("p")
+            // p 엘리먼트 생성 : createElement() : 태그 생성
+            let txtNode=document.createTextNode("Hello")
+            // 텍스트 노드 생성 : createTextNode() : 텍스트 생성
+
+            // <p>Hello</p>
+
+            // 붙이기
+            eleNode.appendChild(txtNode)
+            console.log(eleNode)
+            document.body.appendChild(eleNode)
+            // 자식을 첨부한다.
+        }
+        
+        
+    </script>
+</body>
+</html>

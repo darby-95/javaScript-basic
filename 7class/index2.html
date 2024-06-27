@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class person{
+            // name; : 따로 적지 않아도(생략), 해당 두 줄이 있는것과 같다.
+            // year;
+            constructor(name,year){ // class는 constructor가 없으면 안된다. 
+                this.name=name;
+                this.year=year;
+            }
+            sayName(){
+                return `안녕하세요. 저는 ${this.name} 입니다.`;
+            }
+            
+        }
+        const hongildong=new person("홍길동",2004) // person으로부터 홍길동(name)이 2004년(year)에 태어났다(new)
+        // 인스턴스는 객체를 의미한다.
+
+        console.log(hongildong) // person 객체가 호출된다. : person {name: '홍길동', year: 2004}
+        console.log(hongildong.sayName()) // : 안녕하세요. 저는 홍길동 입니다.
+
+        const kanggamchan=new person("강감찬",2010)
+
+        console.log(kanggamchan) // :person {name: '강감찬', year: 2010}
+
+        console.log(typeof kanggamchan) // 객체 : object 👉 class로 생성한 인스턴스는 객체이다. 
+        console.log(typeof person) // 함수 : function 👉 그냥 함수가 아닌 class 함수이다.
+
+    </script>
+</body>
+</html>

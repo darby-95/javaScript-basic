@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class IdolModel{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+
+            static returnGroupName(){
+                return '아이유';
+            }
+        }
+        const YuJin=new IdolModel("안유진",2003);
+        //console.log(YuJin) // IdolModel {name: '유진', year: 2004} 클래스 자체를 불러온다.
+        //console.log(YuJin.returnGroupName()); // 아이유, YuJin이 소속된 클래스 IdolModel에서 returnGroupName이라는 함수의 값인 아이유가 불러와진다.
+
+        console.log(IdolModel.returnGroupName())
+
+    </script>
+</body>
+</html>

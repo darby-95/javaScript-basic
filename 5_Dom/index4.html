@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="user-name">이름 :</label>
+        <input type="text" id="user-name">
+        <br>
+        <label for="user-home">수강생 홈</label>
+        <input type="text" id="user-home">
+        <br>
+        <input type="button" value="사용자 추가" id="btn">
+        <br>
+        <div class="memberlist"></div>
+    </form>
+
+
+    <script>
+
+        // 버튼을 클릭하면 함수 실행
+        document.querySelector("#btn").addEventListener('click',function(){
+            let user_name=document.querySelector("#user-name")
+            let user_home=document.querySelector("#user-home")
+
+            // a태그 노드 생성 : <a href="" target="_blank"></a>
+            let aTagNode=document.createElement("a")
+            // aTagNode 는 html에 a 태그를 생성한다.
+            aTagNode.href=user_home.value
+            // aTagNode 는 user_home.value 를 주소로 가진다.
+            aTagNode.target="_blank"
+            // aTagNode 는 target을 생성하여 _blank(새창)을 연다.
+
+            
+            // 텍스트 노트 생성 : 
+            let txtNode=document.createTextNode(user_home.value)
+            aTagNode.appendChild(txtNode)
+            // aTagNode 의 자식으로 txtNode를 두어라.
+            console.log(aTagNode)
+        
+            // memberlist에 첨부하기 :
+            let br=document.createElement("br")
+            document.querySelector(".memberlist").appendChild(aTagNode)
+            // html의 클래스명 memberlist 를 불러내서 aTagNode 를 자식으로 두어라.
+            document.querySelector(".memberlist").appendChild(br)
+
+            user_name.value="";
+            user_home.value="";
+        })
+
+    </script>
+</body>
+</html>

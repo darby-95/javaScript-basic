@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 🌟 자바 스크립트 함수의 내부와 객체간의 관계
+        
+        // 💬 Animal 함수(생성자 함수)는 자신과 자신과 같은 이름의 "Animal 프로토타입 객체"를 생성한다.
+        // 💬 Animal 함수는 멤버로 Prototype 속성이 자동적으로 생성되고, 다른곳에 생성(Animal 프로토타입 객체)된 객체를 가리킨다.
+
+        // 💬 생성자 함수 : 객체를 생성하기 위한 함수
+        // : 메모리 할당을 줄이고, 편하게 쓸 수 있다.
+        // : 함수에 메모리를 할당을 해놓으면 새로운 객체를 넣어서 따로 메모리를 할당하지 않아도 갖다쓸 수 있다.
+        function Animal(){}
+
+        // Animal()1️⃣은 Animal 프로토타입 객체 2️⃣를 생성한다.
+        // prototype 3️⃣은 constructor 4️⃣를 가지고 있다.
+        // 하지만 Animal()1️⃣은 👉 constructor4️⃣를 가리키고, prototype3️⃣은 👉 Animal 프로토타입 객체2️⃣를 가리킨다.
+
+        // console.log(Animal)
+        // 👀 생성자 함수를 통해 객체 만들기
+        let tiger= new Animal() // : Animal 안에 새로운(new) 자식으로 tiger을 생성🌟하였다.
+        // console.log(Animal) // : Animal의 자식 또는 관련이 하나도 없기 때문에 tiger를 찾을 수 없다. ❌❌
+        // console.log(tiger) // : Animal의 원형(프로토 타입 객체)에 귀속된다.
+
+        let lion= new Animal()
+        // new 연산자와 생성자 함수를 이용하여 객체 생성시 
+        // 각 객체에는 __proto__속성이 자동으로 생성되고 
+        // 이 객체가 만들어질 수 있도록 해준 원형(Animal 프로토 타입 객체)를 숨은 링크로 가리킨다.
+
+        console.log(tiger.constructor) // function Animal(){} : tiger를 만든 생성자(Animal 프로토타입 객체)를 가리킨다.
+
+        Animal.prototype.aniRun=function(){
+            return "동물이 뛴다."
+        }
+        // : Animal 원형에게 함수Anirun "동물이 뛴다"를 넣었다 👉 Animal 프로토타입 객체에 들어갔다. 👉 
+        console.log(tiger.aniRun()) // : 동물이 뛴다.
+        console.log(lion.aniRun()) // : 동물이 뛴다.
+
+        tiger.aniRun=function(){ // : tiger의 내부의 aniRun에 우선 적용 되도록 할당했다.
+            return "타이거가 뛴다."
+        }
+        console.log(tiger.aniRun()) // : "타이거가 뛴다."가 우선순위가 된다. (타이거는 타이거가 뛴다와 동물이 뛴다를 모두 가지고 있다.)
+        console.log(lion.aniRun()) // : 동물이 뛴다. : tiger를 콕 찝어서 할당했기 때문에 lion에게는 "동물이 뛴다"만 가지고 있어 "동물이 뛴다"가 할당된다.
+
+        console.log(lion)
+        console.log(tiger)
+    </script>
+</body>
+</html>

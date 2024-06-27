@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // get, set
+
+        // 🌟 기본
+        class person{
+            constructor(베이스, 토핑){
+                this.베이스=베이스;
+                this.토핑=토핑;
+            }
+            sayName(){
+                return `나는 ${this.토핑} ${this.베이스}붕어빵 이다.`
+            }
+        }
+        const hong=new person("반죽","슈크림"); // : person으로부터 hong이 생겨났다.
+        const park=new person("반죽","팥");
+
+        console.log(hong.sayName())
+        console.log(park.sayName())
+        
+        // 🌟 get, set
+        class man{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+            // 1) 데이터를 가공하여 새로운 데이터를 반환할때
+            // 2) private한 값을 반환할때
+
+            // 함수처럼 만들고 무조건 return값을 주어야 한다.
+            get nameAndYear(){
+                return `${this.name}, ${this.year}`;
+            }
+
+            // set은 무조건 파라미터를 하나(한개만)받아야 한다.
+            // set name(name){
+            //     this.name=name;
+            // }
+        }
+        const child=new man("강감찬",2004);
+        console.log(child.nameAndYear);
+
+        child.name='이순신';
+        console.log(child)
+        
+        class woman{
+            #name; // private값 class 외부에서는 접근할 수 없다.
+            year;
+            constructor(name,year){
+                this.#name=name;
+                this.year=year;
+            }
+            get name(){
+                return this.#name
+            }
+            set name(name){
+                this.#name=name;
+            }
+        }
+        const children=new woman("세종대왕",2006);
+        console.log(children.name); // get의 name을 불러온다.
+
+        children.name="임꺽정"
+        console.log(children.name) // set의 name을 불러온다.
+    </script>
+</body>
+</html>

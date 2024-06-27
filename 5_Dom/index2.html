@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script>
+    // 이미지노드
+    // 1.이미지 태그만들기
+    // 2.속성추가 ==> 2가지 방식  1) .  2)setAttribute()
+    // 3.객체의 자식요소로 추가하기
+
+    window.onload=function(){
+        //img 엘리먼트 생성
+        let imgNode=document.createElement("img")
+
+        //생성된 이미지 태그(엘리먼트)에 속성 추가
+        imgNode.src="https://cdn.wedding21.co.kr/news/photo/202403/300991_203325_1819.jpg"
+        imgNode.width=400;
+        imgNode.height=600;
+        imgNode.alt="이미지";
+        console.log(imgNode)
+
+        //바디에 자식으로 첨부하기
+        document.body.appendChild(imgNode)
+    }
+
+    window.onload=function(){
+        //setAttribute()메서드를 이용하여 속성을 추가함--> 장점 :사용자 정의 속성을 직접 만들어서 추가할수 있다.
+
+
+        //이미지 태그 생성
+        let imgNode=document.createElement("img");
+
+        //이미지 태그에 속성 추가하기
+        imgNode.setAttribute("src","https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202403/29/WEDDING21/20240329012001393wxky.jpg")
+        imgNode.setAttribute("width",400)
+        imgNode.setAttribute("height",250)
+        imgNode.setAttribute("green","학원")
+
+        console.log(imgNode)
+        //바디에 첨부하기
+        document.body.appendChild(imgNode)
+
+    }
+
+
+ </script>   
+</body>
+</html>

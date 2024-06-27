@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // static keyword
+        // static를 사용하면 class에 귀속시키는 방식이다/
+
+        class Person{
+            name;
+            year;
+            // ✍ static은 부모가 자식에게 물려주지 않는다.
+            // 그 외에는 모든 내용들을 자식에게 부모가 물려준다.
+            static group="green";
+            group2="red"
+
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+        }
+
+        // hong은 Person의 자식으로 넣겠다.
+        const hong=new Person("홍길동",2010)
+        console.log(hong)
+        console.log(hong.name)
+        console.log(hong.group2)
+
+        console.log(Person.group) // green : class에 귀속된 group 변수 사용 방법
+        console.log(hong.group) // undefined : 
+
+    </script>
+</body>
+</html>

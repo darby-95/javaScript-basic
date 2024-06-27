@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //  var.let.conse 변수를 선언할때 사용하는 키워드
+
+        //  var는 옛날 방식, 요즘엔 사용하지 않는다. 
+        //  var는 관리자가 와서 로얄층에 데려갔다, 그 로얄층은 프로그램 어디서나 보인다.
+        console.log(name) //  홍길동
+        var name="홍길동";
+        console.log(name) //  홍길동
+
+        var name="이순신"; //  var로 선언하면 ❗❗동일한 이름의 변수가 생성되어 혼란❗❗이 생길 수 있다.
+
+        var age;
+        console.log(age)  // undefined  :: 그릇은 있으나, 값이 할당되지 않았다. (초기화하기 전이다.)
+        age=30;
+        console.log(age)  // 30
+        var age = 20;
+
+
+        // --------------------------------
+
+
+
+
+        // console.log(name2) Err -----> 선언되기 전이라 Err가 뜬다. (name2라는 변수가 아래에 있기 때문에.)
+        let name2="강감찬";
+        console.log(name2) //  강감찬
+        // let name2= "장발장";  Err -----> 같은 이름(name2) 의 변수가 선언될 수 없다. 
+
+        name2="을지문덕";
+        console.log(name2)
+
+
+        
+
+        // --------------------------------
+        // const --> 상수 (변하지 않는 값)
+
+        const PI=3.14;
+
+        // const FIRST; //  선언만하면 오류 발생 ❗❗ 선언과 동시에 반드시 할당,셋팅 해야한다.
+
+        // PI=333;  // Err (콘솔에서 확인)
+        console.log(PI)
+
+    </script>
+
+</body>
+
+</html>

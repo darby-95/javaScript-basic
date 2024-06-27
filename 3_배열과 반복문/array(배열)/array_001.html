@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 배열(array)
+
+        // [1] 배열이란 
+        // 변수 👉 그 값이 계속 변하더라도 ❗❗ 하나의 값만 담을 수 있다.
+        // 배열 👉 여러개의 값을 담을 수 있다.
+
+        // 배열은 연속된 형태로 담을 수 있는데, 처음부터 끝까지 번호가 부여된 그릇이다.
+
+        let student1="홍길동";
+        let student2="강감찬";
+        let student3="이순신";
+
+        let students=["홍길동","강감찬","이순신"]
+
+        console.log(students[0]) /* 0부터 시작하여 홍길동이 찍힌다. */
+        console.log(students[2]) /* 0,1,2번째인 이순신이 찍힌다. */
+
+        // 수정하기
+        // 강감찬 => 강월래
+        students[1]="강월래" /* 1번째인 강감찬을 강월래로 바꾼다. */
+
+        console.log(students) // ["홍길동","강월래","이순신"]
+
+    </script>
+</body>
+</html>

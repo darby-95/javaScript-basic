@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //  0 VS (0을 제외한 숫자)
+        //  0 은 false
+        //  0을 제외한 숫자는 true로 인식한다.
+
+
+        if (true) {
+            console.log("바이킹 입장")
+        } // 모든게 다 true로 적힌다.
+        if (0) {
+            console.log("바이킹 입장-0")
+        }
+        if (1) {
+            console.log("바이킹 입장-0을 제외")
+        }
+        if (100) {
+            console.log("바이킹 입장-0을 제외")
+        } // 굳이 큰 숫자나 음수(-)를 쓸 수는 있으나 적진 않는다.
+        if (-55) {
+            console.log("바이킹 입장-0을 제외")
+        } // 0과 1중 사용을 많이 한다.
+
+
+        //  자바스크립트에서 논리 연산값이 ❗❗false값을 가지는 경우
+        //  --> "", null, undefined, 0, NaN(숫자가 아니다)
+        if ("") {
+            console.log(' 바이킹 입장-0을 제외-"" ')
+        } //  안찍힌다.
+        if (null) {
+            console.log(' 바이킹 입장-0을 제외-null ')
+        } //  안찍힌다.
+        if (undefined) {
+            console.log(' 바이킹 입장-0을 제외-undefined ')
+        } //  안찍힌다.
+        if (0) {
+            console.log(' 바이킹 입장-0을 제외-0 ')
+        } //  안찍힌다.
+        if (NaN) {
+            console.log(' 바이킹 입장-0을 제외-NaN ')
+        } //  안찍힌다.
+
+        // NaN --> Not a Number 숫자가 아니다.
+        let hobby = "축구";
+        let num = 10;
+        console.log(hobby * num) // NaN  축구는 숫자가 아니기 때문에 *(곱하기)를 하면 NAN 가 뜬다.
+
+
+        //  if문 복습
+        //  Number() --> 숫자로 변환
+        //  parseInt() --> 정수로 변환
+        //  parseFloat() --> 실수로 변환 
+
+        //  Math.round(과목평균)  --> 반올림
+        //  Math.cell(과목평균)  --> 올림
+        //  Math.floor(과목평균)  --> 내림(버림)
+
+        //  Math.toFixed(2)  ---> 소수점 몇자리까지 나오게 할건지 (n)에 쓴다. (n)이하 마지막 자리 반올림
+
+        let 과목평균 = 69.66666
+        console.log(Math.round(과목평균))    // 소수점 반올림이 되면서 70이 된다.
+        console.log(Math.cell(과목평균))     
+        console.log(Math.floor(과목평균))    
+        console.log(과목평균.toFixed(2))     
+
+
+
+
+
+        
+        let 국어점수 = Number(prompt("국어점수입력")) // prompt("a")를 쓸 경우, 글자로 취급.
+        let 수학점수 = Number(prompt("수학점수입력")) // Number(prompt("a"))로 쓸 경우, 숫자로 취급하여 실제로 아래와 같이 명령할경우 더해진다.
+        let 영어점수 = Number(prompt("영어점수입력")) // 위와같이 변경후, 글자를 쓸 경우 NAN이 뜬다.
+
+        let 총점 = 국어점수 + 수학점수 + 영어점수
+
+
+        console.log(typeof 국어점수)
+        console.log(총점)
+
+
+        //  let 평균 = 총점/3
+        //  console.log(평균)
+
+        let 평균 = parseInt(총점 / 3)
+        console.log(평균)
+
+        let 합격여부;
+
+        if (평균 < 60) {
+            if (국어점수 < 40) {
+                합격여부 = `국어점수 40점 미만 불합격 입니다.`;
+            }else if (영어점수<40){
+                합격여부 = `영어점수 40점 미만 불합격 입니다.`;
+            }else if (수학점수<40){
+                합격여부 = `수학점수 40점 미만 불합격 입니다.`;
+            }else {
+                합격여부 = `축하합니다. ${평균}점 합격 입니다.`;
+            }
+
+        }else {
+            합격여부 = `축하합니다. ${평균}점 불합격 입니다.`;
+        }
+
+        console.log(합격여부)
+
+
+    </script>
+
+</body>
+
+</html>
